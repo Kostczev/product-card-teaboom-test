@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточка товара — TeaBoom</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a class="site-logo" href="/">Чайный Бум</a>
+            <span class="site-header__caption">Интернет-магазин чая и посуды</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+            <a href="/">Главная</a>
+            <span aria-hidden="true">/</span>
+            <span id="breadcrumb-category">Каталог</span>
+            <span aria-hidden="true">/</span>
+            <span id="breadcrumb-title">Загрузка товара…</span>
+        </nav>
+
+        <section class="product" id="product" aria-busy="true">
+            <div class="product-main">
+                <div class="product-header">
+                    <p class="product-header__category" id="product-category"></p>
+                    <h1 id="product-title">Загрузка товара…</h1>
+                </div>
+                <div class="product-gallery">
+                    <div class="product-gallery__main">
+                        <img id="product-image" src="assets/ananas-ulun.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-info">
+                <section class="product-section product-section_variants">
+                    <h2 class="section-title">Выберите фасовку</h2>
+                    <div class="variant-list" id="variant-list" aria-label="Фасовка товара"></div>
+                </section>
+
+                <section class="product-section">
+                    <h2 class="section-title">Описание</h2>
+                    <p id="product-description"></p>
+
+                    <div id="product-details"></div>
+                </section>
+
+                <section class="product-section">
+                    <h2 class="section-title">Преимущества</h2>
+                    <ul id="benefits"></ul>
+                </section>
+
+                <section class="product-section">
+                    <h2 class="section-title">Характеристики</h2>
+                    <div id="properties"></div>
+                </section>
+            </div>
+
+            <aside class="purchase-card" aria-label="Покупка товара">
+                <div class="purchase-card__price">
+                    <span class="purchase-card__current" id="purchase-price"></span>
+                    <span class="purchase-card__old" id="purchase-old-price"></span>
+                </div>
+
+                <p class="purchase-card__sku">
+                    Артикул: <span id="product-sku"></span>
+                </p>
+
+                <div class="quantity-control">
+                    <label for="quantity">Количество</label>
+                    <div class="quantity-control__buttons">
+                        <button type="button" id="quantity-decrease" aria-label="Уменьшить количество">−</button>
+
+                        <input id="quantity" type="number" min="1" max="99" value="1" inputmode="numeric">
+
+                        <button type="button" id="quantity-increase" aria-label="Увеличить количество">+</button>
+                    </div>
+                </div>
+
+                <p class="purchase-card__total">
+                    Итого: <strong id="purchase-total"></strong>
+                </p>
+
+                <button type="button" class="button button--primary" id="add-to-cart" disabled>
+                    Добавить в корзину
+                </button>
+
+                <p class="purchase-card__feedback" id="cart-feedback" role="status"></p>
+            </aside>
+        </section>
+
+        <p class="error-message" id="product-error" role="alert" hidden></p>
+    </main>
+</body>
+
+</html>
